@@ -1,0 +1,18 @@
+<h1>Search results</h1>
+
+<table>
+  <% @movies.each do |movie| %>
+  <tr>
+    <td>
+      <%= link_to movie_path(movie.id) do %>
+        <%= movie_poster movie.poster_path %>
+      <% end %>
+    </td>
+    <td>
+      <%= link_to movie.title, movie_path(movie.id) %> (<%= movie.release_date.to_date.strftime("%Y") %>) <br>
+      Directors: <% Tmdb::Movie.crew(movie.id).each do |crew| %> <% if crew['department'] == 'Directing' %> <%= link_to crew['name'], person_path(crew['id']) %> <% end %><% end %><br>
+      Starring: <% Tmdb::Movie.casts(movie.id).first(3).each do |cast| %> <%= link_to cast['name'], person_path(cast['id']) %> | <% end %><br>
+    </td>
+  </tr>
+  <% end %>
+</table>

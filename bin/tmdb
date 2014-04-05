@@ -1,0 +1,53 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+
+require 'themoviedb'
+include Tmdb
+
+# put the key into env:
+#
+#   source ~/bin/TheMovieDBAPI
+#   echo $TMDB_API_KEY
+#
+API_KEY = ENV['TMDB_API_KEY']
+
+puts "API KEY: #{API_KEY}"
+
+Api.key(API_KEY)
+Api.language("en") # setup your default language
+
+movies = Movie.find("batman")
+
+m = movies[0]
+# puts m.class
+# puts m.methods
+puts "#batman movies found: #{movies.size}"
+
+puts m.original_title
+puts m.popularity
+puts m.poster_path
+puts m.vote_average
+puts m.vote_count
+
+puts "-"*44
+puts "the list of most popular movies"
+puts "-"*44
+puts Movie.now_playing[0..2]
+
+puts "="*44
+json = Oj.dump(m)
+puts json
+
+puts "="*44
+configuration = Tmdb::Configuration.new
+puts configuration.base_url
+puts configuration.secure_base_url
+puts configuration.poster_sizes.join(" ")
+puts configuration.backdrop_sizes.join(" ")
+puts configuration.profile_sizes.join(" ")
+puts configuration.logo_sizes.join(" ")
+#                       poster_sizes/backdrop_path
+puts "#{configuration.base_url}/w500/qDNiKJ46kQ6LHo9eyBK8u2QwRpF.jpg"
+#                       poster_sizes/poster_path
+puts "#{configuration.base_url}/w500/qDNiKJ46kQ6LHo9eyBK8u2QwRpF.jpg"

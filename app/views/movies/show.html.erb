@@ -1,0 +1,62 @@
+<h3>Poster</h3>
+
+<%= movie_poster @movie.poster_path %>
+
+<h3>Facts</h3>
+<p>Budget:  $<%= number_with_delimiter(@movie.budget, :delimiter => ',') %>
+<p>Revenue: $<%= number_with_delimiter(@movie.revenue, :delimiter => ',') %>
+<p>Status: <%= @movie.status %>
+<p>Runtime: <%= @movie.runtime %>
+<p>Release Date: <%= @movie.release_date.to_date.strftime("%d/%m/%Y") if @movie.release_date %>
+
+<h2>Trailers</h2>
+<% @trailers['youtube'].each do |trailer| %>
+  <p><%= link_to "#{trailer['name']} - #{trailer['size']}", "http://www.youtube.com/watch?v=#{trailer['source']}" %>
+<% end %>
+
+<h2><%= @movie.title %></h2>
+<div id="star" data-score="<%= @movie.vote_average %>"></div>
+<p><%= @movie.vote_average %> from <%= @movie.vote_count %> voters.
+
+<h3>Overview</h3>
+<p><%= @movie.overview %>
+
+<h3>Tagline</h3>
+<p><%= @movie.tagline %>
+
+<h3>Images</h3>
+<p>TODO
+
+<h3>Genres</h3>
+<p><% @movie.genres.each do |genre| %>
+  <%= genre['name'] %>
+<% end %>
+
+<h3>Casts</h3>
+<table>
+  <% @cast.first(5).each do |cast| %>
+  <tr>
+    <td>
+      <%= cast_poster cast['profile_path'] %>
+      <% unless cast['profile_path'] %>
+        <img src="http://placehold.it/154x154">
+      <% end %>
+    </td>
+    <td>
+      <%= link_to cast['name'], person_path(cast['id']) %> as <%= cast['character'] %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<% if @similar_movies %>
+  <h3>Similar Movies</h3>
+
+   <% @similar_movies.first(8).each do |movie| %>
+     <% if movie %>
+        <%= link_to movie_path(movie['id']) do %>
+          <%= movie_poster movie['poster_path'] %>
+        <% end %>
+     <% end %>
+   <% end %>
+<% end %>
