@@ -6,6 +6,12 @@ RSpec documentation:
 * [rspec-collection_matchers](https://github.com/rspec/rspec-collection_matchers)
 * [rspec-expectations](https://github.com/rspec/rspec-expectations)
 
+Other public APIs:
+
+* [List of data APIs that require no server-side auth or private credentials](https://gist.github.com/wbzyl/9989677)
+  (forked from [gist:4952991](https://gist.github.com/afeld/4952991)).
+
+
 ### fc -l -10
 
 ```sh
