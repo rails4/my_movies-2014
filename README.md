@@ -11,6 +11,9 @@ Other public APIs:
 * [List of data APIs that require no server-side auth or private credentials](https://gist.github.com/wbzyl/9989677)
   (forked from [gist:4952991](https://gist.github.com/afeld/4952991)).
 
+**TODO:**
+Use [dotenv](https://github.com/bkeepers/dotenv) to load ENV variables.
+
 
 ### fc -l -10
 
