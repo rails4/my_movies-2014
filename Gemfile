@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 
@@ -13,7 +12,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
+# gem 'jbuilder', '~> 2.0'
 # rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -28,10 +27,11 @@ group :development, :test do
 end
 
 # Movie & TV API Ruby wrappers
-# gem 'ruby-tmdb'
 gem 'themoviedb', '= 0.0.21'
 gem 'oj'
 
 gem 'turbolinks'
 gem 'quiet_assets'
 gem 'awesome_print'
+
+gem 'dotenv-rails', groups: [:development, :test]
