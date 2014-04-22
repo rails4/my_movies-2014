@@ -12,7 +12,9 @@ Other public APIs:
   (forked from [gist:4952991](https://gist.github.com/afeld/4952991)).
 
 **TODO:**
+
 Use [dotenv](https://github.com/bkeepers/dotenv) to load ENV variables.
+See also [Environment Variables](https://shellycloud.com/documentation/environment_variables).
 
 
 ### fc -l -10
