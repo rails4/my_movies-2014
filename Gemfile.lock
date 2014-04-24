@@ -45,6 +45,11 @@ GEM
     coffee-script-source (1.7.0)
     database_cleaner (1.2.0)
     diff-lcs (1.2.5)
+    dotenv (0.11.1)
+      dotenv-deployment (~> 0.0.2)
+    dotenv-deployment (0.0.2)
+    dotenv-rails (0.11.1)
+      dotenv (= 0.11.1)
     erubis (2.7.0)
     execjs (2.0.2)
     hike (1.2.3)
@@ -52,9 +57,6 @@ GEM
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
     i18n (0.6.9)
-    jbuilder (2.0.6)
-      activesupport (>= 3.0.0, < 5)
-      multi_json (~> 1.2)
     jquery-rails (3.1.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -160,7 +162,7 @@ DEPENDENCIES
   capybara (= 2.2.1)
   coffee-rails (~> 4.0.0)
   database_cleaner (= 1.2.0)
-  jbuilder (~> 2.0)
+  dotenv-rails
   jquery-rails
   oj
   quiet_assets
