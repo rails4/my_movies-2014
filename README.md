@@ -11,10 +11,9 @@ Other public APIs:
 * [List of data APIs that require no server-side auth or private credentials](https://gist.github.com/wbzyl/9989677)
   (forked from [gist:4952991](https://gist.github.com/afeld/4952991)).
 
-**TODO:**
-
-Use [dotenv](https://github.com/bkeepers/dotenv) to load ENV variables.
-See also [Environment Variables](https://shellycloud.com/documentation/environment_variables).
+Use [dotenv](https://github.com/bkeepers/dotenv) to load ENV variables
+(see also [Environment Variables](https://shellycloud.com/documentation/environment_variables));
+or use [figaro](https://github.com/laserlemon/figaro) – simple Rails app configuration.
 
 
 ### fc -l -10
